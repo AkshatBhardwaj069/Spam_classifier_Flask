@@ -5,11 +5,8 @@ import os
 app = Flask(__name__)
 
 # Load the pre-trained model and vectorizer
-model_path = r'C:\Users\vishakhag\Downloads\email_classifier\spam_classifier_model.joblib'
-vectorizer_path = r'C:\Users\vishakhag\Downloads\email_classifier\tfidf_vectorizer.joblib'
-
-if not os.path.exists(model_path) or not os.path.exists(vectorizer_path):
-    raise FileNotFoundError("Model or vectorizer file not found. Please ensure both files are in the specified paths.")
+model_path = 'spam_classifier_model.joblib'
+vectorizer_path = 'tfidf_vectorizer.joblib'
 
 model = joblib.load(model_path)
 vectorizer = joblib.load(vectorizer_path)
